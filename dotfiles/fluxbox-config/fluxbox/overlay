@@ -1,0 +1,8 @@
+! The following line will prevent styles from setting the background.
+! background: none
+#borderColor: #527d8b
+window.focus.borderColor: #527d8b
+window.unfocus.borderColor: #527d8b
+#borderWidth: 4
+#window.focus.borderWidth: 4
+#window.unfocus.borderWidth: 1

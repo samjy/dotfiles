@@ -1,0 +1,7 @@
+[begin] (fluxbox) {} <>
+    [exec] (Firefox) {/usr/bin/firefox} </usr/share/pixmaps/firefox-3.5.png>
+    [exec] (Terminal) {/usr/bin/gnome-terminal} </usr/share/pixmaps/gnome-terminal.xpm>
+    [exec] (VLC) {/usr/bin/vlc} </usr/share/vlc/vlc.xpm>
+    [separator] () {} <>
+    [include] (/etc/X11/fluxbox/fluxbox-menu) {} <>
+[end]

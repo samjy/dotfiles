@@ -1,0 +1,98 @@
+! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)
+! check lines marked by 'FBCV13' if they are correctly updated
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Move1 :StartMoving
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+OnWindowBorder Move1 :StartMoving
+
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Mouse2 :StartTabbing
+
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Double Mouse1 :Shade
+OnTitlebar Mouse3 :WindowMenu
+
+!mouse actions added by fluxbox-update_configs
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
+
+!mouse actions added by fluxbox-update_configs
+OnToolbar Mouse4 :NextWorkspace
+OnToolbar Mouse5 :PrevWorkspace
+
+!mouse actions added by fluxbox-update_configs
+OnDesktop Mouse1 :hideMenus
+OnDesktop Mouse2 :workspaceMenu
+OnDesktop Mouse3 :rootMenu
+OnDesktop Mouse4 :nextWorkspace
+OnDesktop Mouse5 :prevWorkspace
+
+#navigation
+Mod1 Tab :NextGroup (workspace=[current]) !! FBCV13 !!
+Mod1 Shift Tab :PrevGroup (workspace=[current]) !! FBCV13 !!
+Mod1 n :NextTab
+Mod1 Shift n :PrevTab
+Mod1 1 :Workspace 1
+Mod1 2 :Workspace 2
+Mod1 3 :Workspace 3
+Mod1 4 :Workspace 4
+Mod1 5 :Workspace 5
+Mod1 6 :Workspace 6
+Mod1 7 :Workspace 7
+Mod1 8 :Workspace 8
+Mod1 9 :Workspace 9
+Mod1 Shift 1 :SendToWorkspace 1
+Mod1 Shift 2 :SendToWorkspace 2
+Mod1 Shift 3 :SendToWorkspace 3
+Mod1 Shift 4 :SendToWorkspace 4
+Mod1 Shift 5 :SendToWorkspace 5
+Mod1 Shift 6 :SendToWorkspace 6
+Mod1 Shift 7 :SendToWorkspace 7
+Mod1 Shift 8 :SendToWorkspace 8
+Mod1 Shift 9 :SendToWorkspace 9
+#change background according to workspace
+#ChangeWorkspace :Exec hsetroot -full ~/.fluxbox/backgrounds/bg$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}').png
+
+#actions sur les fenetres
+Mod1 Return :Fullscreen
+Mod4 Return :Maximize
+Mod1 Shift Return :ToggleDecor
+Mod1 F4 :Close
+Mod1 c :Close
+Mod1 k :KillWindow
+Mod1 h :Shade
+Mod1 Shift d :DetachClient
+Mod1 s :Stick
+#Mod1 d :ShowDesktop
+Mod1 i :Iconify
+Mod1 Shift i :Deiconify
+Mod1 t :ArrangeWindows
+
+#taille des fenêtres
+Mod1 Shift Mouse4 :Resize +16 +10
+Mod1 Shift Mouse5 :Resize -16 -10
+
+#transparence
+Mod1 Mouse4 :SetAlpha +5
+Mod1 Mouse5 :SetAlpha -5
+Mod1 o :SetAlpha 255
+
+#commandes
+None F3 :RootMenu
+Mod1 F2 :ExecCommand roxterm --title=roxterm
+None Escape :AbortKeychain
+Mod1 F12 :ExecCommand gnome-screensaver-command --lock
+Mod1 r :ExecCommand gmrun
+
+#brightness
+Mod4 Up :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py up
+Mod4 Down :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py down
+
+
+
+
+
+

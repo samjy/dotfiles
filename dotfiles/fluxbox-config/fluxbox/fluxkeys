@@ -1,0 +1,38 @@
+#navigation
+Mod1 Tab :NextWindow
+Mod1 Shift Tab :PrevWindow
+Ctrl Tab :NextTab
+Ctrl Shift Tab :PrevTab
+Mod1 1 :Workspace 1
+Mod1 2 :Workspace 2
+Mod1 3 :Workspace 3
+Mod1 4 :Workspace 4
+Mod1 5 :Workspace 5
+Mod1 6 :Workspace 6
+Mod1 7 :Workspace 7
+Mod1 8 :Workspace 8
+Mod1 9 :Workspace 9
+Mod1 Shift 1 :SendToWorkspace 1
+Mod1 Shift 2 :SendToWorkspace 2
+Mod1 Shift 3 :SendToWorkspace 3
+Mod1 Shift 4 :SendToWorkspace 4
+Mod1 Shift 5 :SendToWorkspace 5
+Mod1 Shift 6 :SendToWorkspace 6
+Mod1 Shift 7 :SendToWorkspace 7
+Mod1 Shift 8 :SendToWorkspace 8
+Mod1 Shift 9 :SendToWorkspace 9
+#actions sur les fenetres
+Mod1 Return :Fullscreen
+Mod1 Shift Return :ToggleDecor
+Mod1 F4 :Close
+Mod1 c :Close
+Mod1 k :KillWindow
+Mod1 s :Stick
+Mod1 d :ShowDesktop
+Mod1 i :Iconify
+Mod1 Shift i :Deiconify
+Mod1 t :ArrangeWindows
+#commandes
+None F3 :RootMenu
+Mod1 F2 :ExecCommand gnome-terminal
+None Escape :AbortKeychain

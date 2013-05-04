@@ -1,0 +1,111 @@
+# -*- coding: utf-8 -*-
+
+[startup]  	{/usr/bin/roxterm --title=term --separate -p sam --color-scheme=sam2}
+[startup]  	{/usr/bin/roxterm --title=screenterm --separate -p screenterm --color-scheme=sam1}
+#[startup]	{firefox}
+[startup]	{google-chrome}
+#[startup]	{thunderbird}
+
+#[app] (class=Thunderbird*)
+  #[Workspace]	{2}
+  #[deco]	{BORDER}
+  #[Maximized]	{yes}
+  #[Layer]	{8} #normal
+#[end]
+
+#[app] (name=Navigator)
+  #[Workspace]	{1}
+  #[deco]	{BORDER}
+  ##[Maximized]	{yes}
+  #[Layer]	{8} #normal
+#[end]
+
+#[app] (name=Firefox)
+  #[Workspace]	{1}
+  #[deco]	{BORDER}
+  ##[Maximized]	{yes}
+  #[Layer]	{8} #normal
+#[end]
+
+#[app] (class=Chromium-browser)
+  #[Workspace]	{1}
+  #[deco]	{BORDER}
+  ##[Maximized]	{yes}
+  #[Layer]	{8} #normal
+#[end]
+
+[app] (title=myterm)(name=myterm)
+  [Workspace]	{0}
+  [Deco]	{BORDER}
+  [Position]	(WINCENTER) {0 0}
+  [Layer]	{2} #above dock
+  [Alpha]	{190 190}
+  [Tab]		{no}
+[end]
+
+[app] (title=term)(name=term)
+  [Workspace]	{0}
+  [Dimensions]	{980 600}
+  #[Maximized]	{yes}
+  [Deco]	{BORDER}
+  [Layer]	{8} #normal
+  [Tab]		{no}
+[end]
+
+[app] (title=screenterm)
+  [Workspace]	{0}
+  [Dimensions]	{630 350}
+  [Position]	(WINCENTER) {0 0}
+  [Deco]	{BORDER}
+  [Alpha]	{225 140}
+  [Tab]		{no}
+[end]
+
+[app] (dclock)
+  [Position]	(TOPRIGHT) {0 0}
+  [Dimensions]  {150 50}
+  [Layer]	{0} # above dock
+  [Sticky]	{yes}
+  [Deco]	{BORDER}
+  [Alpha]	{140 140}
+  [FocusHidden]	{yes}
+  [Hidden]	{yes}
+[end]
+
+[app] (roxterm)
+  [Dimensions]	{500 300}
+  [Deco]	{BORDER}
+  [Layer]	{8} #normal
+  [Tab] {no}
+  [Position]	(WINCENTER)	{0 0}
+  [Alpha]	{225 140}
+[end]
+
+[app] (MPlayer)
+  [Deco]	{BORDER}
+[end]
+
+[app] (name=acroread-fra) (class=Acroread-fra)
+  [Workspace]	{2}
+  [Deco]	{BORDER}
+[end]
+
+[app] (name=acroread-en) (class=Acroread-en)
+  [Workspace]	{2}
+  [Deco]	{BORDER}
+[end]
+
+[app] (gmrun)
+  [Position]	(WINCENTER) {0 0}
+  [Layer]	{0} # above dock
+  [Sticky]	{yes}
+  [Deco]	{BORDER}
+  [IconHidden]	{yes}
+  [FocusNewWindow] {yes}
+[end]
+
+[app] (name=.*)
+  [deco]	{BORDER}
+[end]
+
+#EOF
