@@ -1,0 +1,12 @@
+# vim:ft=sh
+
+alias packettracer='/usr/local/PacketTracer5/packettracer'
+alias dclock='dclock -seconds -miltime -bg "#131A2A" -fg "#97A8AF" -led_off "#131A2A" # -date "%A %d %B %Y"'
+alias ll='ls -l'
+alias pyclean='find . -type f -name "*.pyc" -exec rm {} \; -print -or -type f -name "*~" -exec rm {} \; -print'
+
+if [ -f ~/.gg_aliases ]; then
+    . ~/.gg_aliases
+fi
+
+#EOF
