@@ -1,0 +1,5 @@
+Terminal = /usr/bin/roxterm
+TermExec = /usr/bin/roxterm -e
+URL_http = /usr/bin/chromium-browser %u
+URL_https = /usr/bin/chromium-browser %u
+URL_mailto = /usr/bin/chromium-browser %u
