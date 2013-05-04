@@ -1,0 +1,21 @@
+[color]  # Ensure we get color
+	diff = auto
+	branch = auto
+	status = auto
+
+[alias]  # shortcuts
+	br = branch
+	co = checkout
+	ci = commit
+	st = status
+	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	
+[core]
+	excludesfile = ~/.gitignore
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 713x550+554+64
+	history-view-vpane-position = 209
+	main-window-view = HistoryView
+	file-view-vpane-position = 71
