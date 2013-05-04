@@ -1,0 +1,13 @@
+#! /bin/bash
+
+KEYS_DIR=~/.ssh/all_authorized_keys
+
+mv ~/.ssh/authorized_keys ~/.ssh/authorized_keys.bak
+
+for f in `ls $KEYS_DIR`
+do
+	cat $KEYS_DIR/$f >> ~/.ssh/authorized_keys
+done
+
+
+#EOF
