@@ -1,0 +1,4 @@
+[Bootstrap]
+UNO_TYPES=$ORIGIN/types.rdb
+UNO_SERVICES=$ORIGIN/services.rdb
+

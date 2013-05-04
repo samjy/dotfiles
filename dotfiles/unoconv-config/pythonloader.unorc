@@ -1,0 +1,4 @@
+[Bootstrap]
+PYTHONHOME=$ORIGIN/python-core
+PYTHONPATH=$ORIGIN/python-core/lib $ORIGIN/python-core/lib/lib-dynload $ORIGIN
+
