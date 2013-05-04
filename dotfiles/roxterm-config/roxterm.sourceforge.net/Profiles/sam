@@ -1,0 +1,10 @@
+
+[roxterm profile]
+font=Monospace 9
+browser_spawn_type=0
+browser=/usr/bin/chromium-browser
+scrollbar_pos=0
+disable_tab_menu_shortcuts=1
+hide_menubar=1
+always_show_tabs=0
+scrollback_lines=10000
