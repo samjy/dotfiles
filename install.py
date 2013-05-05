@@ -11,6 +11,8 @@ from optparse import OptionParser
 from ConfigParser import SafeConfigParser
 import logging
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
 log = logging.getLogger('dotfiles_installer')
 log.addHandler(logging.StreamHandler())
 log.setLevel(logging.DEBUG)
@@ -112,17 +114,19 @@ def parse_options():
     """
     parser = OptionParser(usage="%prog [options]")
     parser.add_option('-c', '--conf',
-                      default="",
+                      default=os.path.join(HERE, 'conf/install.conf'),
                       help="Installation configuration file (where to install things)")
     parser.add_option('-e', '--env',
-                      default="",
+                      default=os.path.join(HERE, 'conf/desktop.conf'),
                       help="Environment configuration file (what to install)")
     parser.add_option('-b', '--backup',
                       default="",
                       help="Backup directory")
-    parser.add_option('-r', '--replace',
-                      action='store_true',
-                      help="Should we replace existing paths?")
+    parser.add_option('-k', '--keep',
+                      dest="replace",
+                      action='store_false',
+                      default=True,
+                      help="Should we keep existing paths? (will raise if they exist")
     parser.add_option('-d', '--dryrun',
                       action='store_true',
                       help="Don't execute commands")
