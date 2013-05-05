@@ -1,3 +1,3 @@
 [submodule "dotfiles/vim-config"]
 	path = dotfiles/vim-config
-	url = git@github.com:samjy/vim-config.git
+	url = https://github.com/samjy/vim-config.git
