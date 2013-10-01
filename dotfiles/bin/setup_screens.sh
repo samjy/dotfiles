@@ -15,7 +15,7 @@ then
 		esac
 	fi
 
-	echo "$0 right|left|off [resolution]"
+	echo "$0 right|left|top|off [resolution]"
 	xrandr
 	exit
 fi
@@ -31,5 +31,10 @@ case $1 in
 		echo "setting to left"
 		xrandr --output HDMI1 --mode $resolution --pos 0x0
 		xrandr --output eDP1 --pos ${resolution%x*}x0
+		;;
+	"top")
+		echo "setting to top"
+		xrandr --output HDMI1 --mode $resolution --pos 0x0
+		xrandr --output eDP1 --pos 0x${resolution##*x}
 		;;
 esac
