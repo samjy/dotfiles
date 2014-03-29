@@ -22,3 +22,5 @@
 [user]
 	name = samjy
 	email = sam+git@samjy.com
+[push]
+	default = simple
