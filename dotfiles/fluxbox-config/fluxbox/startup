@@ -54,6 +54,7 @@ gtk-theme-switch2 /usr/share/themes/Clearlooks
 /usr/bin/gnome-keyring-daemon &
 /usr/bin/nm-applet &
 /usr/bin/gnome-power-manager &
+/usr/bin/xfce4-power-manager &
 /usr/bin/gnome-volume-control-applet &
 /usr/bin/gnome-sound-applet &
 #/usr/bin/dclock -seconds -miltime -date "%A %d %B %Y" &

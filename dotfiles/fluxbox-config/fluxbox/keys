@@ -86,11 +86,13 @@ Mod1 F2 :ExecCommand roxterm --title=roxterm
 None Escape :AbortKeychain
 Mod1 F12 :ExecCommand gnome-screensaver-command --lock
 Mod1 r :ExecCommand gmrun
+# screenshot
+Print :ExecCommand gnome-screenshot
+Mod4 Print :ExecCommand gnome-screenshot -w
 
 #brightness
 Mod4 Up :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py up
 Mod4 Down :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py down
-
 
 
 
