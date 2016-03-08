@@ -1,0 +1,11 @@
+#! /bin/bash
+
+if [[ $1 = "-h" ]]
+then
+	echo "pdf_reduce outfile.pdf input1.pdf [...]"
+	exit 0
+fi
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=200 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$1 ${@:2}
+
+#EOF
