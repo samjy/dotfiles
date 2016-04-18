@@ -1,6 +1,6 @@
 
 [roxterm options]
 profile=sam
-colour_scheme=green
+colour_scheme=darkred
 warn_close=3
 encoding=UTF-8

@@ -12,3 +12,6 @@ disable_menu_shortcuts=1
 use_custom_command=1
 command=startmyscreen
 scrollback_lines=10000
+colour_scheme=dark
+width=90
+height=25
