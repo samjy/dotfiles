@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-[startup]  	{/usr/bin/roxterm --title=term --separate -p sam --color-scheme=sam2}
-[startup]  	{/usr/bin/roxterm --title=screenterm --separate -p screenterm --color-scheme=sam1}
+[startup]  	{/usr/bin/roxterm --title=editor --separate -p editor}
+[startup]  	{/usr/bin/roxterm --title=screenterm --separate -p screenterm}
 #[startup]	{firefox}
 [startup]	{google-chrome}
 #[startup]	{thunderbird}
@@ -43,9 +43,10 @@
   [Tab]		{no}
 [end]
 
-[app] (title=term)(name=term)
+[app] (title=editor)
   [Workspace]	{0}
-  [Dimensions]	{980 600}
+  [Dimensions]	{34% 90%}
+  [Position]	(TOPLEFT) {34% 6%}
   #[Maximized]	{yes}
   [Deco]	{BORDER}
   [Layer]	{8} #normal
@@ -54,8 +55,8 @@
 
 [app] (title=screenterm)
   [Workspace]	{0}
-  [Dimensions]	{630 350}
-  [Position]	(WINCENTER) {0 0}
+  [Dimensions]	{33% 33%}
+  [Position]	(TOPLEFT) {0 0}
   [Deco]	{BORDER}
   [Alpha]	{225 140}
   [Tab]		{no}
@@ -73,7 +74,7 @@
 [end]
 
 [app] (roxterm)
-  [Dimensions]	{500 300}
+  #[Dimensions]	{632 302}
   [Deco]	{BORDER}
   [Layer]	{8} #normal
   [Tab] {no}
@@ -82,16 +83,6 @@
 [end]
 
 [app] (MPlayer)
-  [Deco]	{BORDER}
-[end]
-
-[app] (name=acroread-fra) (class=Acroread-fra)
-  [Workspace]	{2}
-  [Deco]	{BORDER}
-[end]
-
-[app] (name=acroread-en) (class=Acroread-en)
-  [Workspace]	{2}
   [Deco]	{BORDER}
 [end]
 
