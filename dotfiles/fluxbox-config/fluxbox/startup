@@ -44,11 +44,6 @@ hsetroot -full ~/.fluxbox/backgrounds/spirale_big.png
 # wmsmixer -w &
 # idesk &
 
-# changing Gtk theme (package gtk-theme-switch must be installed)
-#gtk-theme-switch2 /usr/share/themes/Human
-#gtk-theme-switch2 /usr/share/themes/ClearlooksClassic
-gtk-theme-switch2 /usr/share/themes/Clearlooks
-
 # starting some usefull applets
 #/usr/bin/gnome-settings-daemon &
 /usr/bin/gnome-keyring-daemon &
