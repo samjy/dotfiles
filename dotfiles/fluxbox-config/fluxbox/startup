@@ -7,8 +7,9 @@
 #
 # fbsetbg -f ~/pictures/wallpaper.png
 #fbsetbg -f ~/.fluxbox/backgrounds/spirale.png
+fbsetbg -c ~/.fluxbox/backgrounds/spirale.png
 #display -window root ~/.fluxbox/backgrounds/spirale_big.png
-hsetroot -full ~/.fluxbox/backgrounds/spirale_big.png
+#hsetroot -full ~/.fluxbox/backgrounds/spirale_big.png
 #
 # This sets a black background
 #
