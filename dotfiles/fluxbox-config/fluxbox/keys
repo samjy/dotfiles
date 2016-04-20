@@ -56,6 +56,9 @@ Mod1 Shift 9 :SendToWorkspace 9
 #change background according to workspace
 #ChangeWorkspace :Exec hsetroot -full ~/.fluxbox/backgrounds/bg$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}').png
 
+Mod4 Shift 1 :SetHead 1
+Mod4 Shift 2 :SetHead 2
+
 #actions sur les fenetres
 Mod1 Return :Fullscreen
 Mod4 Return :Maximize
@@ -63,13 +66,24 @@ Mod1 Shift Return :ToggleDecor
 Mod1 F4 :Close
 Mod1 c :Close
 Mod1 k :KillWindow
-Mod1 h :Shade
+#Mod1 h :Shade
+Mod4 d :ToggleCmd {ShowDesktop} {DeIconify all originquiet}
 Mod1 Shift d :DetachClient
 Mod1 s :Stick
-#Mod1 d :ShowDesktop
-Mod1 i :Iconify
-Mod1 Shift i :Deiconify
-Mod1 t :ArrangeWindows
+Mod4 h :Iconify
+Mod4 Shift h :Deiconify
+Mod1 t :ArrangeWindowsVertical (FocusHidden=no) (IconHidden=no) (Minimized=no)
+#Mod1 t :ArrangeWindowsVertical (FocusHidden=no) (IconHidden=no) (Minimized=no) (Stuck=no)
+
+Mod4 Right :MoveRight +8
+Mod4 Left :MoveLeft +8
+Mod4 Up :MoveUp +8
+Mod4 Down :MoveDown +8
+
+Mod4 Shift Right :ResizeHorizontal +4
+Mod4 Shift Left :ResizeHorizontal -4
+Mod4 Shift Up :ResizeVertical -2
+Mod4 Shift Down :ResizeVertical +2
 
 #taille des fenêtres
 Mod1 Shift Mouse4 :Resize +16 +10
@@ -90,9 +104,9 @@ Mod1 r :ExecCommand gmrun
 Print :ExecCommand gnome-screenshot
 Mod4 Print :ExecCommand gnome-screenshot -w
 
-#brightness
-Mod4 Up :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py up
-Mod4 Down :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py down
+##brightness
+#Mod4 Up :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py up
+#Mod4 Down :ExecCommand sudo ~/lib/python/brightness_tool/brightness.py down
 
 
 
