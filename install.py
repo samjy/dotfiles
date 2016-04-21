@@ -144,6 +144,9 @@ def main():
                           replace_existing=options.replace,
                           dryrun=options.dryrun)
     installer.install_environment(options.env)
+    # run extra commands script
+    p = Popen(os.path.join(HERE, 'conf/some_commands.sh'), shell=True)
+    p.wait()
 
 
 if __name__ == '__main__':
