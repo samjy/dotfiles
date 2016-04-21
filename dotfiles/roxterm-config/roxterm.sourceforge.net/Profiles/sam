@@ -11,3 +11,4 @@ scrollback_lines=10000
 colour_scheme=dark
 width=90
 height=20
+show_resize_grip=0

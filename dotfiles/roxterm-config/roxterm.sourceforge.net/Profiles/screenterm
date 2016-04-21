@@ -15,3 +15,5 @@ scrollback_lines=10000
 colour_scheme=dark
 width=90
 height=25
+show_resize_grip=0
+show_add_tab_btn=1
