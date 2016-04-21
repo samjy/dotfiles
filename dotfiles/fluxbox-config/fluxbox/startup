@@ -49,7 +49,7 @@ fbsetbg -c ~/.fluxbox/backgrounds/spirale.png
 #/usr/bin/gnome-settings-daemon &
 /usr/bin/gnome-keyring-daemon &
 /usr/bin/nm-applet &
-/usr/bin/gnome-power-manager &
+#/usr/bin/gnome-power-manager &
 /usr/bin/xfce4-power-manager &
 #/usr/bin/gnome-volume-control-applet &
 /usr/bin/gnome-sound-applet &
