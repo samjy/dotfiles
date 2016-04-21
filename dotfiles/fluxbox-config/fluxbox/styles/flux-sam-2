@@ -17,10 +17,10 @@
 					
 menu.frame.font:				Ubuntu-9:bold
 menu.title.font:				Ubuntu-9:bold
-toolbar.clock.font:				Ubuntu-9:bold
-toolbar.workspace.font:				Ubuntu-9:bold
-toolbar.iconbar.focused.font:			Ubuntu-9:bold
-toolbar.iconbar.unfocused.font:			Ubuntu-9
+toolbar.clock.font:				Ubuntu-10:bold
+toolbar.workspace.font:				Ubuntu-10:bold
+toolbar.iconbar.focused.font:			Ubuntu-10:bold
+toolbar.iconbar.unfocused.font:			Ubuntu-10
 window.font:					Ubuntu-9
 
 ############################################################## MENU ###########
@@ -61,7 +61,7 @@ toolbar.bevelWidth:				0
 toolbar.borderWidth:				1
 toolbar.borderColor:				#aea79f
 
-toolbar.height:					14
+toolbar.height:					20
 
 toolbar.justify:				center
 
