@@ -51,7 +51,7 @@ fbsetbg -c ~/.fluxbox/backgrounds/spirale.png
 /usr/bin/nm-applet &
 /usr/bin/gnome-power-manager &
 /usr/bin/xfce4-power-manager &
-/usr/bin/gnome-volume-control-applet &
+#/usr/bin/gnome-volume-control-applet &
 /usr/bin/gnome-sound-applet &
 #/usr/bin/dclock -seconds -miltime -date "%A %d %B %Y" &
 /usr/bin/dclock -seconds -miltime -bg "#131A2A" -fg "#97A8AF" -led_off "#131A2A" &
