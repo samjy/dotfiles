@@ -85,6 +85,11 @@ Mod4 Shift Left :ResizeHorizontal -4
 Mod4 Shift Up :ResizeVertical -2
 Mod4 Shift Down :ResizeVertical +2
 
+Mod4 Mod1 Up :MaximizeVertical
+Mod4 Mod1 Down :MaximizeVertical
+Mod4 Mod1 Left :MaximizeHorizontal
+Mod4 Mod1 Right :MaximizeHorizontal
+
 #taille des fenêtres
 Mod1 Shift Mouse4 :Resize +16 +10
 Mod1 Shift Mouse5 :Resize -16 -10
