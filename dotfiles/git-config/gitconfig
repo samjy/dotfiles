@@ -10,7 +10,9 @@
 	st = status
 	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	
+	lolad = log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --abbrev-commit --all
+	hotspots = !git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less -F
+	techdebt = "!techdebt() { for f in $(find $1 -name \"*.py\" -or -name \"*.html\" -or -name \"*.rst\" -or -name \"*.styl\") ; do echo \"$(egrep '(TODO|FIXME|HACK|XXX)' $f | wc -l) $f\" ; done | grep -v '^0 ' | sort -rn | less -XF; } ; techdebt"
 [core]
 	excludesfile = ~/.gitignore
 [giggle]
@@ -24,3 +26,6 @@
 	email = sam+git@samjy.com
 [push]
 	default = matching
+[credential]
+	# remember logins for 1 day
+	helper = cache --timeout=86400
