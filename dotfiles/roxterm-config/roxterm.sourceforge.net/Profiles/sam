@@ -12,3 +12,6 @@ colour_scheme=dark
 width=90
 height=20
 show_resize_grip=0
+visible_bell=0
+cursor_blink_mode=0
+cursor_shape=0
