@@ -62,6 +62,7 @@ xcompmgr -cn &
 # xscreensaver
 gnome-screensaver-command --exit
 gnome-screensaver &
+xautolock -detectsleep -time 10 -locker "gnome-screensaver-command --lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
 
 # set middle button emulation
 synclient EmulateMidButtonTime=500

@@ -104,6 +104,8 @@ None F3 :RootMenu
 Mod1 F2 :ExecCommand roxterm --title=roxterm
 None Escape :AbortKeychain
 Mod1 F12 :ExecCommand gnome-screensaver-command --lock
+Mod4 F11 :ExecCommand xautolock -disable; notify-send -t 1000 -- 'Auto lock disabled'
+Mod4 Shift F11 :ExecCommand xautolock -enable; notify-send -t 1000 -- 'Auto lock enabled'
 Mod1 r :ExecCommand gmrun
 # screenshot
 Print :ExecCommand gnome-screenshot
