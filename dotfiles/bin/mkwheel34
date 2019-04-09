@@ -1,12 +1,13 @@
 #!/bin/sh
-WHEEL_DIR=~/.wheelhouse
-DOWNLOAD_CACHE_DIR=~/.pip_downloadcache
-rm -rf $DOWNLOAD_CACHE_DIR
-mkdir -p $DOWNLOAD_CACHE_DIR
+WHEEL_DIR=~/.wheelhouse34
+# DOWNLOAD_CACHE_DIR=~/.pip_downloadcache
+# rm -rf $DOWNLOAD_CACHE_DIR
+# mkdir -p $DOWNLOAD_CACHE_DIR
 
-python3.4 -m pip wheel --use-wheel -w "$WHEEL_DIR" -f "$WHEEL_DIR" \
-  --download-cache "$DOWNLOAD_CACHE_DIR" $@
-for x in "$DOWNLOAD_CACHE_DIR/"*.whl; do
-  mv "$x" "$WHEEL_DIR/${x##*%2F}"
-done
+# python3.4 -m pip wheel --use-wheel -w "$WHEEL_DIR" -f "$WHEEL_DIR" \
+#   --download-cache "$DOWNLOAD_CACHE_DIR" $@
+# for x in "$DOWNLOAD_CACHE_DIR/"*.whl; do
+#   mv "$x" "$WHEEL_DIR/${x##*%2F}"
+# done
+python3.4 -m pip download -d "$WHEEL_DIR" $@
 

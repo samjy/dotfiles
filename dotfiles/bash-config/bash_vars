@@ -29,4 +29,13 @@ fi
 
 export TERMCOLOR=1
 
+export ANSIBLE_NOCOWS=1
+
+export SLOOT_FLASK_PATH=/home/sam/sloot/sloot.flask
+export CAMASA_PATH=/home/sam/camasa
+export FXST_PATH=/home/sam/fxst
+
+# don't keep jrnl entries in bash history
+export HISTIGNORE="$HISTIGNORE:jrnl *"
+
 #EOF

@@ -29,8 +29,13 @@ case $1 in
 		;;
 	"left")
 		echo "setting to left"
-		xrandr --output HDMI1 --mode $resolution --pos 0x0
+		xrandr --output HDMI1 --mode $resolution --rotate normal --pos 0x0
 		xrandr --output eDP1 --pos ${resolution%x*}x0
+		;;
+	"leftvert")
+		echo "setting to left vertical"
+		xrandr --output HDMI1 --rotate right --mode $resolution --pos 0x0
+		xrandr --output eDP1 --pos ${resolution##*x}x0
 		;;
 	"top")
 		echo "setting to top"
