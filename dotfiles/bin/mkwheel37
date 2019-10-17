@@ -1,0 +1,5 @@
+#!/bin/sh
+WHEEL_DIR=~/.wheelhouse37
+python3.7 -m pip download -d "$WHEEL_DIR" $@
+
+
