@@ -11,8 +11,18 @@
 	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lolad = log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --abbrev-commit --all
+	# Find hot spots (files which are the most modified)
+	# usage: git hotspots
 	hotspots = !git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less -F
+	# Find hot spots (files which are the most modified) limitted to the last 250 commits
+	# usage: git hotspots-recent
+	hotspots-recent = !git log -250 --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less -F
+	# Find the files with most technical debt (files with most TODO, FIXME, HACK, XXX)
+	# usage: git techdebt [<path>]
 	techdebt = "!techdebt() { for f in $(find $1 -name \"*.py\" -or -name \"*.html\" -or -name \"*.rst\" -or -name \"*.styl\") ; do echo \"$(egrep '(TODO|FIXME|HACK|XXX)' $f | wc -l) $f\" ; done | grep -v '^0 ' | sort -rn | less -XF; } ; techdebt"
+	# Get ownership stats on the repo or a directory
+	# usage: git ownership [<path>]
+	ownership = "!gitownership() { git ls-files -- $1 | while read f; do git blame -w --line-porcelain -- \"$f\" | grep -I '^author '; done | sort -f | uniq -ic | sort -n; } ; gitownership"
 [core]
 	excludesfile = ~/.gitignore
 [giggle]
