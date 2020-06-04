@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR_TO_SYNC=/home/sam/autoentrepreneur
+REMOTE=gdrive-sam
+
+rclone sync -v $DIR_TO_SYNC $REMOTE:autoentrepreneur
