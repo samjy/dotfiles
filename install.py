@@ -69,10 +69,11 @@ class Installer(object):
         """Install given file (src) to dest. If something already exists,
         backup it to self.backup_dir
         """
-        cmd = "for f in {path}/{src} ; do echo {dest} ; done"
+        cmd = "for f in {path}/{src} ; do if [ \"$(basename $f)\" != '*' ]; then echo {dest} ; fi ; done"
         cmd = cmd.format(path=path,
                          src=src,
                          dest=dest.replace('*', '`basename $f`'))
+        log.debug(cmd)
         p = Popen(cmd, shell=True, stdout=PIPE)
         dests = p.stdout.read().split()
         for d in dests:
@@ -87,7 +88,7 @@ class Installer(object):
     def new_link(self, path, src, dest):
         """Make a new link in dest, pointing to src
         """
-        cmd = "for f in {path}/{src} ; do ln -s $f {dest} ; done"
+        cmd = "for f in {path}/{src} ; do if [ \"$(basename $f)\" != '*' ]; then ln -s $f {dest} ; fi ; done"
         cmd = cmd.format(path=path,
                          src=src,
                          dest=dest.replace('*', '`basename $f`'))
