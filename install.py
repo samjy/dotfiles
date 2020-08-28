@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-"""
-
 import os
 import tempfile
 from subprocess import Popen, PIPE
 from optparse import OptionParser
-from ConfigParser import SafeConfigParser
+from configparser import ConfigParser
 import logging
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,12 +38,12 @@ class Installer(object):
         self.backup_dir = (os.path.abspath(backup_dir) if backup_dir
                            else tempfile.mkdtemp())
         self.replace_existing = replace_existing
-        self.conf = SafeConfigParser()
-        self.conf.read(config_file)
+        self.conf = ConfigParser()
+        self.conf.read(config_file, encoding='utf-8')
         self.dryrun = dryrun
 
     def install_environment(self, env_file):
-        env = SafeConfigParser()
+        env = ConfigParser()
         if not env.read(env_file):
             raise ValueError("Failed to read env config '%s'" % env_file)
         if self.replace_existing:
@@ -75,7 +72,7 @@ class Installer(object):
                          dest=dest.replace('*', '`basename $f`'))
         log.debug(cmd)
         p = Popen(cmd, shell=True, stdout=PIPE)
-        dests = p.stdout.read().split()
+        dests = p.stdout.read().decode('utf-8').split()
         for d in dests:
             if os.path.exists(d):
                 if self.replace_existing:
@@ -139,11 +136,13 @@ def main():
     """
     options, args = parse_options()
 
-    installer = Installer(options.conf,
-                          src_folder="",
-                          backup_dir=options.backup,
-                          replace_existing=options.replace,
-                          dryrun=options.dryrun)
+    installer = Installer(
+        options.conf,
+        src_folder="",
+        backup_dir=options.backup,
+        replace_existing=options.replace,
+        dryrun=options.dryrun,
+    )
     installer.install_environment(options.env)
     # run extra commands script
     p = Popen(os.path.join(HERE, 'conf/some_commands.sh'), shell=True)
