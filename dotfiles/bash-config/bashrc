@@ -74,4 +74,6 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 #. ~/.bash_profile
-. ~/.bash_vars
+if [ -f ~/.bash_vars ]; then
+    . ~/.bash_vars
+fi
