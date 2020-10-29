@@ -20,6 +20,10 @@ export PYTHONPATH=~/lib/python:~/a9engine/conf:$PYTHONPATH
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/envs
+if [ $(python -c "import sys;print(sys.version_info[0])") == 3 ]
+then
+	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+fi
 if [ ! -d $WORKON_HOME ] ; then
 	mkdir $WORKON_HOME
 fi
