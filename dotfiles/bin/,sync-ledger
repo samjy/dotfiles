@@ -5,8 +5,17 @@ REMOTE=gdrive-sam
 
 # create and encrypt bundle
 cd /home/sam/ledger/
-git bundle create $DIR_TO_SYNC/ledger-backup
+# make sure directory is there
+mkdir -p backup
+# create a single file bundle of the git repo
+git bundle create $DIR_TO_SYNC/ledger-backup --all
 echo "Use password from lastpass"
+# this creates a .gpg file
 gpg -c $DIR_TO_SYNC/ledger-backup
+# remove the original file
+rm $DIR_TO_SYNC/ledger-backup
 
-rclone sync -v $DIR_TO_SYNC $REMOTE:prasse
+rclone sync -v $DIR_TO_SYNC $REMOTE:ledger
+
+# cleanup
+rm $DIR_TO_SYNC/ledger-backup.gpg
