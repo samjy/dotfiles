@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR_TO_SYNC=/home/sam/ledger/backup
+REMOTE=gdrive-sam
+
+# create and encrypt bundle
+cd /home/sam/ledger/
+git bundle create $DIR_TO_SYNC/ledger-backup
+echo "Use password from lastpass"
+gpg -c $DIR_TO_SYNC/ledger-backup
+
+rclone sync -v $DIR_TO_SYNC $REMOTE:prasse
