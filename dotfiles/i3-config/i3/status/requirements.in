@@ -1,0 +1,5 @@
+basiciw
+colour
+i3pystatus @ git+https://github.com/enkore/i3pystatus.git
+netifaces
+psutil

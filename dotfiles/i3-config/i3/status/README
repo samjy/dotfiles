@@ -1,0 +1,10 @@
+Install
+=======
+
+::
+
+    mkvirtualenv i3pystatus
+    sudo apt-get install libiw-dev fonts-font-awesome
+    pip install -r requirements.in
+
+
