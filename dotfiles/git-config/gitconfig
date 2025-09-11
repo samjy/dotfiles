@@ -11,21 +11,35 @@
 	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lolad = log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --abbrev-commit --all
+
 	# Find hot spots (files which are the most modified)
 	# usage: git hotspots
 	hotspots = !git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less -F
+
 	# Find hot spots (files which are the most modified) limitted to the last 250 commits
 	# usage: git hotspots-recent
 	hotspots-recent = !git log -250 --pretty=format: --name-only | sort | uniq -c | sort -rg | head -100 | less -F
+
 	# Find the files with most technical debt (files with most TODO, FIXME, HACK, XXX)
 	# usage: git techdebt [<path>]
 	techdebt = "!techdebt() { for f in $(find $1 -name \"*.py\" -or -name \"*.html\" -or -name \"*.rst\" -or -name \"*.styl\") ; do echo \"$(egrep '(TODO|FIXME|HACK|XXX)' $f | wc -l) $f\" ; done | grep -v '^0 ' | sort -rn | less -XF; } ; techdebt"
+
 	# Get ownership stats on the repo or a directory
 	# usage: git ownership [<path>]
 	ownership = "!gitownership() { git ls-files -- $1 | while read f; do git blame -w --line-porcelain -- \"$f\" | grep -I '^author '; done | sort -f | uniq -ic | sort -n; } ; gitownership"
 	# gitlab merge request
 	# usage: git gitlabmr <remote> <merge-request-id>
 	gitlabmr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+
+	# reset permissions in current diff
+	# usage: git permission-reset
+	permission-reset = "!git diff -p -R --no-ext-diff --no-color | grep -E '^(diff|(old|new) mode)' --color=never | git apply"
+
+	# add Reviewed-by string to last commit
+	# usage: `git review [name]`
+	# in `git rebase -i`, add a line `exec git review [name]` after commits on which to add the Reviewed-by
+	# configure a [reviewers] section in gitconfig with aliases for the common reviewers
+	review = "!gitreview () { reviewer=$(if [ -z \"$1\" ] ; then echo \"`git config user.name` <`git config user.email`>\" ; else echo `git config reviewers.$1` ; fi) ; echo $reviewer ; GIT_EDITOR=\"git interpret-trailers --trailer \\\"Reviewed-by: $reviewer\\\" --in-place\" git commit --amend; } ; gitreview"
 [core]
 	excludesfile = ~/.gitignore
 [giggle]
@@ -37,8 +51,11 @@
 [user]
 	name = samjy
 	email = sam+git@samjy.com
+[reviewers]
+	sam = "samjy <sam+git@samjy.com>"
 [push]
-	default = matching
+	#default = matching
+	default = upstream
 [credential]
 	# remember logins for 1 day
 	helper = cache --timeout=86400
