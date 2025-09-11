@@ -16,7 +16,7 @@ export TEXINPUTS=~/lib/latex//:"${TEXINPUTS}"
 
 export PYTHONSTARTUP=~/.pythonrc
 
-export PYTHONPATH=~/lib/python:~/a9engine/conf:$PYTHONPATH
+export PYTHONPATH=~/lib/python:$PYTHONPATH
 
 # virtualenvwrapper stuff
 export WORKON_HOME=~/envs
@@ -35,15 +35,7 @@ export TERMCOLOR=1
 
 export ANSIBLE_NOCOWS=1
 
-export SLOOT_FLASK_PATH=/home/sam/sloot/sloot.flask
-export CAMASA_PATH=/home/sam/camasa
-export FXST_PATH=/home/sam/fxst
-
 # don't keep jrnl entries in bash history
-export HISTIGNORE="$HISTIGNORE:jrnl *"
-
-if [ -f ~/.fxst_vars ]; then
-	. ~/.fxst_vars
-fi
+export HISTIGNORE="$HISTIGNORE:jrnl [^-]*"
 
 #EOF
