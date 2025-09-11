@@ -16,13 +16,13 @@ then
 				xrandr --output $external --off
 				xrandr --output $internal --pos 0x0
 				# make the internal output the primary
-				xrandr -- output $internal --primary
+				xrandr --output $internal --primary
 				exit 0
 				;;
 		esac
 	fi
 
-	echo "$0 right|left|top|off <resolution>"
+	echo "$0 same|right|left|top|off <resolution>"
 	xrandr
 	exit
 fi
@@ -31,6 +31,10 @@ fi
 resolution=$2
 
 case $1 in
+	"same")
+		echo "setting to same"
+		xrandr --output $external --same-as $internal --mode $resolution --scale 1x1
+		;;
 	"right")
 		echo "setting to right"
 		xrandr --output $external --mode $resolution --pos 1920x0
