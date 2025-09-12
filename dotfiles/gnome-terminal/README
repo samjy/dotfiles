@@ -1,0 +1,5 @@
+# dump with
+dconf dump /org/gnome/terminal/ > gnome_terminal_settings.txt
+
+# install with
+dconf load /org/gnome/terminal/ < gnome_terminal_settings.txt

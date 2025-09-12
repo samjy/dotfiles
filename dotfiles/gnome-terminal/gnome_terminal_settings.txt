@@ -1,0 +1,74 @@
+[legacy]
+default-show-menubar=false
+new-tab-position='last'
+theme-variant='system'
+
+[legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'a1881029-8be9-4807-8861-44dfb9ebb577', '49beac2e-e000-4af7-9643-d66f1dc45482', '9c9d04bd-ea6c-4f3e-9bd8-2dbff95f880a', '5f4a5472-b5a5-4947-b174-0bc90f5d788b']
+
+[legacy/profiles:/:49beac2e-e000-4af7-9643-d66f1dc45482]
+background-color='#ffffff'
+font='DejaVu Sans Mono 9'
+foreground-color='#1e2e33'
+palette=['#2e3436', '#cc0000', '#4e9a06', '#c4a000', '#3465a4', '#75507b', '#06989a', '#d3d7cf', '#555753', '#d94343', '#93b373', '#d5c758', '#5a81aa', '#a37c9f', '#76bfbf', '#eeeeec']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=true
+visible-name='editor'
+word-char-exceptions=@ms '-,.;:/?%&#_=+@~·'
+
+[legacy/profiles:/:5f4a5472-b5a5-4947-b174-0bc90f5d788b]
+background-color='#170f0d'
+bold-is-bright=false
+font='Monospace 9'
+foreground-color='#746c48'
+palette=['#261e26', '#312c38', '#4d353b', '#503b43', '#57403e', '#665453', '#6e5450', '#72585e995623', '#906756', '#927e7e', '#ad6042', '#b48b6f', '#c4ab98', '#d9c9b6', '#d035c6bebb63', '#b2589d1e9406']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='brown'
+word-char-exceptions=@ms '-,.;:/?%&#_=+@~·'
+
+[legacy/profiles:/:9c9d04bd-ea6c-4f3e-9bd8-2dbff95f880a]
+background-color='#21a2027c02df'
+font='Monospace 9'
+foreground-color='#efe398d20686'
+palette=['#897187128712', '#81b4697e782c', '#9393b3b37373', '#947a8d1d6c63', '#34346565a4a4', '#adad7f7fa8a8', '#4902695e69cf', '#3098392c2805', '#555557575353', '#8b17790283f8', '#9358b3b673b5', '#d54bc78a5812', '#5a09812baae9', '#a3c67c909f84', '#7619bf94bf94', '#eeeeeeeeecec']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='darkred'
+word-char-exceptions=@ms '-,.;:/?%&#_=+@~·'
+
+[legacy/profiles:/:a1881029-8be9-4807-8861-44dfb9ebb577]
+audible-bell=true
+background-color='#13901a6329ed'
+custom-command='startmyscreen'
+font='Monospace 9'
+foreground-color='#97eda926afae'
+palette=['#2e2e34343636', '#8e49455d4462', '#4e4e9a9a0606', '#c5679fa55ff6', '#34346565a4a4', '#757550507b7b', '#52ae8b1a8be0', '#a529a658a3f9', '#555557575353', '#e95d482e482e', '#9d8bc8b3735e', '#ef62e43a89d1', '#8586b7afed30', '#b4ab971bb175', '#7fcfd2c5d2c5', '#c362c362c362']
+scrollbar-policy='never'
+use-custom-command=true
+use-system-font=false
+use-theme-colors=false
+visible-name='screenterm'
+word-char-exceptions=@ms '-,.;:/?%&#_=+@~·'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='#13901a6329ed'
+background-transparency-percent=0
+font='Monospace 9'
+foreground-color='#97eda926afae'
+login-shell=false
+palette=['#2e2e34343636', '#8e49455d4462', '#4e4e9a9a0606', '#c5679fa55ff6', '#34346565a4a4', '#757550507b7b', '#52ae8b1a8be0', '#a529a658a3f9', '#555557575353', '#e95d482e482e', '#9d8bc8b3735e', '#ef62e43a89d1', '#8586b7afed30', '#b4ab971bb175', '#7fcfd2c5d2c5', '#c362c362c362']
+scroll-on-output=true
+scrollbar-policy='never'
+use-custom-command=false
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=true
+use-transparent-background=false
+visible-name='default'
+word-char-exceptions=@ms '-,.;:/?%&#_=+@~·'
