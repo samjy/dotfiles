@@ -302,10 +302,6 @@ bar {
 }
 
 
-# setup screens
-exec --no-startup-id ~/bin/setup_screens.sh left 1920x1080
-
-
 # --- window/workspaces positionning --- #
 # which output for which workspace if first is not available, the next is used
 workspace 1 output primary
