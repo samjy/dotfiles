@@ -1,62 +1,53 @@
 #!/bin/sh
 
-#external=HDMI1
-#internal=eDP1
-external=HDMI-0
-internal=eDP-1-1
+# detect screens and resolution, we assume external will be HDMI
+internal=$(xrandr | grep "^[^H].* connected " | awk '{ print$1 }')
+internalresolution=$(xrandr | grep " connected " | grep "$internal" | grep -Po "\d+x\d+")
+external=$(xrandr | grep "^H.* connected " | awk '{ print$1 }')
+externalresolution=$(xrandr | grep " connected "| grep "$external" | grep -Po "\d+x\d+" )
 
-if [ $# -lt 2 ]  # we need at least 2 args
-then
-	if [ $# -eq 1 ]
-	then
-		case $1 in
-			"off")
-				echo "Turning extra screen off"
-				# turn screen off
-				xrandr --output $external --off
-				xrandr --output $internal --pos 0x0
-				# make the internal output the primary
-				xrandr --output $internal --primary
-				exit 0
-				;;
-		esac
-	fi
-
-	echo "$0 same|right|left|top|off <resolution>"
-	xrandr
-	exit
-fi
-
-# TODO autodetect and use the higher res for screen?
-resolution=$2
+echo "internal: $internal $internalresolution // external: $external $externalresolution"
 
 case $1 in
+	"")
+		echo "$0 same|right|left|top|off [presentation]"
+		xrandr
+		exit 1
+		;;
+	"off")
+		echo "Turning extra screen off"
+		# turn screen off
+		xrandr --output $external --off
+		xrandr --output $internal --pos 0x0
+		# make the internal output the primary
+		xrandr --output $internal --primary
+		exit 0
+		;;
 	"same")
 		echo "setting to same"
-		xrandr --output $external --same-as $internal --mode $resolution --scale 1x1
+		xrandr --output $external --same-as $internal --mode $externalresolution --scale 1x1
 		;;
 	"right")
 		echo "setting to right"
-		xrandr --output $external --mode $resolution --pos 1920x0
+		xrandr --output $external --mode $externalresolution --right-of $internal
 		;;
 	"left")
 		echo "setting to left"
-		xrandr --output $external --mode $resolution --rotate normal --pos 0x0
-		xrandr --output $internal --pos ${resolution%x*}x0
+		xrandr --output $external --mode $externalresolution --left-of $internal
 		;;
 	"leftvert")
 		echo "setting to left vertical"
-		xrandr --output $external --rotate right --mode $resolution --pos 0x0
-		xrandr --output $internal --pos ${resolution##*x}x0
+		xrandr --output $external --rotate right --mode $externalresolution --pos 0x0
+		xrandr --output $internal --pos ${externalresolution##*x}x0
 		;;
 	"top")
 		echo "setting to top"
-		xrandr --output $external --mode $resolution --pos 0x0
-		xrandr --output $internal --pos 0x${resolution##*x}
+		xrandr --output $external --mode $externalresolution --pos 0x0
+		xrandr --output $internal --pos 0x${externalresolution##*x}
 		;;
 esac
 
-case $3 in
+case $2 in
 	"")
 		echo "with external screen as primary"
 		echo "(for presentations, add 'presentation' to the command)"
@@ -67,7 +58,3 @@ case $3 in
 		xrandr --output $internal --primary
 		;;
 esac
-
-# TODO use better xrandr commands to avoid errors
-#xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
-#xrandr --output VGA1 --mode 1024x768 --right-of LVDS1
