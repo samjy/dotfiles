@@ -1,0 +1,24 @@
+#! /bin/bash
+if [[ $1 = "-h" ]]
+then
+	echo ",pdfreduceall"
+	echo "  will reduce all *.0001.pdf files"
+	exit 0
+fi
+
+pdfreduce () {
+	if [[ $1 = "-h" ]]
+	then
+		echo "pdf_reduce outfile.pdf input1.pdf [...]"
+		exit 0
+	fi
+
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=200 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$1 ${@:2}
+}
+
+for f in *.0001.pdf
+do
+	pdfreduce ${f%.00*.pdf}.pdf ${f%.00*.pdf}.*.pdf
+done
+
+#EOF
