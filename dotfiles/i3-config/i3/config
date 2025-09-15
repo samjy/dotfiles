@@ -309,18 +309,11 @@ workspace 2 output primary
 workspace 3 output primary
 workspace 4 output primary
 workspace 5 output primary
-# TODO make this generic
-workspace 6 output eDP-1-1
-workspace 7 output eDP-1-1
-workspace 8 output eDP-1-1
-workspace 9 output eDP-1-1
-workspace 10 output eDP-1-1
-# NOTE this is for the last version of i3
-#workspace 6 output right primary
-#workspace 7 output right primary
-#workspace 8 output right primary
-#workspace 9 output right primary
-#workspace 10 output right primary
+workspace 6 output nonprimary
+workspace 7 output nonprimary
+workspace 8 output nonprimary
+workspace 9 output nonprimary
+workspace 10 output nonprimary
 
 # layouts
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.i3/workspaces/workspace-1.json'"
