@@ -128,7 +128,7 @@ bindsym $mod+Control+Shift+k kill
 bindsym $mod+i move scratchpad
 bindsym $mod+Shift+i scratchpad show
 
-# sticky
+# sticky (only on floating windows)
 bindsym $mod+s sticky toggle
 
 # enter fullscreen mode for the focused container
@@ -178,6 +178,16 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # move workspace to output
 bindsym $mod+Control+Shift+Left move workspace to output left
 bindsym $mod+Control+Shift+Right move workspace to output right
+
+# select output mode
+mode "output" {
+        bindsym l exec ",displaysetup left && notify-send -t 1000 -- 'Output to left' || notify-send -t 1000 -- 'Issue when setting output to left'" ; mode "default"
+        bindsym o exec ",displaysetup off && notify-send -t 1000 -- 'Output to off' || notify-send -t 1000 -- 'Issue when turning off external output'" ; mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+o mode "output"
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+$alt+s layout stacking
@@ -351,6 +361,7 @@ exec --no-startup-id gnome-screensaver-command --exit
 exec --no-startup-id gnome-screensaver &
 exec --no-startup-id xautolock -detectsleep -time 10 -locker "gnome-screensaver-command --lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
 bindsym $mod+F12 exec gnome-screensaver-command --lock
+bindsym $mod+Control+Shift+F12 exec systemctl suspend
 bindsym $mod+F11 exec xautolock -enable; exec notify-send -t 1000 -- 'Auto lock enabled'
 bindsym $mod+Shift+F11 exec xautolock -disable; exec notify-send -t 1000 -- 'Auto lock disabled'
 
