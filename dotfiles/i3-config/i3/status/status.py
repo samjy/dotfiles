@@ -144,10 +144,10 @@ for ifc in sorted(netifaces.interfaces()):
         "network",
         interface=ifc,
         format_up=(
-            # "{interface}:({essid} {quality:03.0f}%) {v4cidr}"
-            # if ifc.startswith("w")  # likely to be wifi
-            # else "{interface}:{v4cidr}"
-            "{interface}:{v4cidr}"
+            "{interface}:({essid} {quality:03.0f}%) {v4cidr}"
+            if ifc.startswith("w")  # likely to be wifi
+            else "{interface}:{v4cidr}"
+            # "{interface}:{v4cidr}"
         ),
         format_down="{interface}:down",
         color_up="#00aa00",

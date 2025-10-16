@@ -181,8 +181,8 @@ bindsym $mod+Control+Shift+Right move workspace to output right
 
 # select output mode
 mode "output" {
-        bindsym l exec ",displaysetup left && notify-send -t 1000 -- 'Output to left' || notify-send -t 1000 -- 'Issue when setting output to left'" ; mode "default"
-        bindsym o exec ",displaysetup off && notify-send -t 1000 -- 'Output to off' || notify-send -t 1000 -- 'Issue when turning off external output'" ; mode "default"
+        bindsym l exec ",displaysetup left && notify-send -t 2000 -- 'Output to left' || notify-send -t 2000 -- 'Issue when setting output to left'" ; mode "default"
+        bindsym o exec ",displaysetup off && notify-send -t 2000 -- 'Output to off' || notify-send -t 2000 -- 'Issue when turning off external output'" ; mode "default"
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -205,7 +205,7 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Control+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+Shift+e exec "echo 'no\nyes' | dmenu -p 'Exit i3?' | grep -q yes && i3-msg exit"
 
 
 # --- resize windows --- #
