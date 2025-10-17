@@ -59,3 +59,5 @@
 [credential]
 	# remember logins for 1 day
 	helper = cache --timeout=86400
+[init]
+	defaultBranch = master
