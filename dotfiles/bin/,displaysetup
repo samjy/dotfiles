@@ -1,5 +1,7 @@
 #!/bin/sh
 
+xrandr --auto
+
 # detect screens and resolution, we assume external will be HDMI
 internal=$(xrandr | grep "^[^H].* connected " | awk '{ print$1 }')
 internalresolution=$(xrandr | grep " connected " | grep "$internal" | grep -Po "\d+x\d+")
@@ -9,6 +11,7 @@ externalresolution=$(xrandr | grep " connected "| grep "$external" | grep -Po "\
 echo "internal: $internal $internalresolution // external: $external $externalresolution"
 
 # TODO allow to give externalresolution by hand (sometimes it's not on the line, e.g. when --off was called)
+# TODO when screen is off, resolution doesn't get parsed.
 
 
 case $1 in
