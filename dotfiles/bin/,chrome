@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# TODO get values based on system memory
+
+systemd-run --scope -p MemoryMax=80% -p MemoryHigh=75% --user google-chrome
