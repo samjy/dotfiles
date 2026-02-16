@@ -11,16 +11,10 @@
             "border": "normal",
             "current_border_width": 2,
             "floating": "auto_off",
-            "geometry": {
-               "height": 893,
-               "width": 896,
-               "x": 0,
-               "y": 0
-            },
-            "percent": 0.3,
+            "percent": 1,
             "swallows": [
                {
-                   "class": "^Google\\-chrome$"
+                   "class": "^Google-chrome$"
                }
             ],
             "type": "con"

@@ -68,7 +68,7 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [window_role="floating*"] floating enable
-for_window[title="floating *"] floating enable
+for_window [title="floating *"] floating enable
 
 force_display_urgency_hint 1000 ms
 
@@ -182,6 +182,7 @@ bindsym $mod+Control+Shift+Right move workspace to output right
 # select output mode
 mode "output" {
         bindsym l exec ",displaysetup left && notify-send -t 2000 -- 'Output to left' || notify-send -t 2000 -- 'Issue when setting output to left'" ; mode "default"
+        bindsym m exec ",displaysetup same && notify-send -t 2000 -- 'Output to mirror' || notify-send -t 2000 -- 'Issue when setting output to mirror'" ; mode "default"
         bindsym o exec ",displaysetup off && notify-send -t 2000 -- 'Output to off' || notify-send -t 2000 -- 'Issue when turning off external output'" ; mode "default"
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -354,7 +355,8 @@ exec --no-startup-id i3-msg 'workspace 10; exec pavucontrol; workspace 1'
 exec --no-startup-id i3-msg 'workspace 1; exec $term --role=editor --window-with-profile=editor'
 exec --no-startup-id i3-msg 'workspace 1; exec $term --role=screenterm --window-with-profile=screenterm'
 exec --no-startup-id i3-msg 'workspace 1; exec $term --role=utilterm --window-with-profile=utilterm'
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome; workspace 1'
+exec --no-startup-id i3-msg 'workspace 1; exec $term --role=volumeterm --window-with-profile=volumeterm'
+exec $HOME/bin/,chrome
 
 # --- xscreensaver / lock --- #
 exec --no-startup-id gnome-screensaver-command --exit

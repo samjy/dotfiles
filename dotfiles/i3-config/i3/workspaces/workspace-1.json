@@ -19,12 +19,6 @@
                     "border": "normal",
                     "current_border_width": 2,
                     "floating": "user_off",
-                    "geometry": {
-                       "height": 352,
-                       "width": 632,
-                       "x": 0,
-                       "y": 0
-                    },
                     "name": "screenterm",
                     "percent": 1,
                     "swallows": [
@@ -40,12 +34,6 @@
             "border": "normal",
             "current_border_width": 2,
             "floating": "user_off",
-            "geometry": {
-               "height": 982,
-               "width": 1234,
-               "x": 652,
-               "y": 64
-            },
             "name": "editor",
             "percent": 0.7,
             "swallows": [
