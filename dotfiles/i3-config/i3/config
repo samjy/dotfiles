@@ -5,6 +5,9 @@
 # - this is cool
 # - see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# --- required packages --- #
+# i3 neovim pavucontrol blueman xfce4-power-manager
+
 
 # --- set a few variables --- #
 # colors
